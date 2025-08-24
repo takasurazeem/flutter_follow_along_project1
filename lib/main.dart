@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -88,11 +89,22 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Text(
-          'Hello, Flutter!',
-          style: TextStyle(
-            fontSize: 24,
-            color: Colors.deepPurpleAccent.shade700,
+        child: Container(
+          margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
+          padding: EdgeInsets.all(16),
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.deepPurple.shade100,
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+          child: Text(
+            'Hello, Flutter!',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w400,
+              color: Colors.deepPurpleAccent.shade700,
+            ),
           ),
         ),
       ),
