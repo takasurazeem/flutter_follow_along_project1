@@ -1,0 +1,61 @@
+<workflow_instructions>
+  <mode_overview>
+    This mode guides the user through the full git commit workflow: staging files, reviewing changes, writing and validating commit messages, running git commit, and enforcing commit standards.
+  </mode_overview>
+  <initialization_steps>
+    <step number="1">
+      <action>Understand the user's commit intent</action>
+      <details>
+        Parse the user's input to identify:
+        - Which files to stage
+        - The purpose of the commit
+        - Any special requirements (e.g., sign-off, ticket reference)
+      </details>
+    </step>
+    <step number="2">
+      <action>Gather repository context</action>
+      <tools>
+        <tool>execute_command - git status, git diff</tool>
+        <tool>read_file - for reviewing changes</tool>
+      </tools>
+    </step>
+  </initialization_steps>
+  <main_workflow>
+    <phase name="staging">
+      <description>Stage the appropriate files for commit</description>
+      <steps>
+        <step>Identify files to stage</step>
+        <step>Run git add for selected files</step>
+        <step>Confirm staged changes with git status</step>
+      </steps>
+    </phase>
+    <phase name="commit_message">
+      <description>Write and validate the commit message</description>
+      <steps>
+        <step>Draft a clear, standards-compliant commit message</step>
+        <step>Validate message against commit standards</step>
+        <step>Revise message if needed</step>
+      </steps>
+    </phase>
+    <phase name="commit_execution">
+      <description>Run the git commit command</description>
+      <steps>
+        <step>Execute git commit with the validated message</step>
+        <step>Handle any pre-commit hooks or errors</step>
+      </steps>
+    </phase>
+    <phase name="post_commit">
+      <description>Verify commit and provide next steps</description>
+      <steps>
+        <step>Show git log for confirmation</step>
+        <step>Suggest pushing or further actions</step>
+      </steps>
+    </phase>
+  </main_workflow>
+  <completion_criteria>
+    <criterion>All intended files are staged and committed</criterion>
+    <criterion>Commit message meets standards</criterion>
+    <criterion>No errors or warnings remain</criterion>
+    <criterion>User is informed of next steps</criterion>
+  </completion_criteria>
+</workflow_instructions>

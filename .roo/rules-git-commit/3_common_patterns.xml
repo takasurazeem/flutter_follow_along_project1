@@ -1,0 +1,41 @@
+<common_patterns>
+  <pattern name="conventional_commit">
+    <description>Standard commit message structure</description>
+    <example>
+      <code><![CDATA[
+type(scope?): subject
+
+body (optional)
+
+footer (optional)
+      ]]></code>
+      <explanation>
+        type: feat, fix, docs, style, refactor, test, chore, etc.
+        scope: optional, specifies the area affected
+        subject: concise summary in imperative mood
+      </explanation>
+    </example>
+  </pattern>
+  <pattern name="staging_files">
+    <description>How to stage files for commit</description>
+    <example>
+      <code><![CDATA[
+git add path/to/file1 path/to/file2
+      ]]></code>
+      <explanation>
+        Use git add to stage only the intended files, not all changes.
+      </explanation>
+    </example>
+  </pattern>
+  <pattern name="reviewing_changes">
+    <description>Review staged changes before committing</description>
+    <example>
+      <code><![CDATA[
+git diff --cached
+      ]]></code>
+      <explanation>
+        Shows the diff of staged changes to be committed.
+      </explanation>
+    </example>
+  </pattern>
+</common_patterns>

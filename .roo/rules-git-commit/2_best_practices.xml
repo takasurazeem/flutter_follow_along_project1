@@ -1,0 +1,76 @@
+<best_practices>
+  <general_principles>
+    <principle priority="high">
+      <name>Atomic Commits</name>
+      <description>Each commit should represent a single logical change.</description>
+      <rationale>This makes history easier to understand and revert.</rationale>
+      <example>
+        <scenario>Refactoring and bugfix</scenario>
+        <good>Separate commits for refactor and bugfix</good>
+        <bad>Mixing unrelated changes in one commit</bad>
+      </example>
+    </principle>
+    <principle priority="high">
+      <name>Conventional Commit Messages</name>
+      <description>Follow a standard format (e.g., Conventional Commits) for messages.</description>
+      <rationale>Improves readability and enables automation.</rationale>
+      <example>
+        <scenario>Adding a feature</scenario>
+        <good>feat: add user login flow</good>
+        <bad>added stuff</bad>
+      </example>
+    </principle>
+    <principle priority="high">
+      <name>Gratitude Suffix</name>
+      <description>Always end every commit message with "الحمد لله". For multiline commit messages, append it at the end of the entire message.</description>
+      <rationale>Expresses gratitude and maintains consistency in commit history.</rationale>
+      <example>
+        <scenario>Single-line commit</scenario>
+        <good>fix: resolve crash on startup الحمد لله</good>
+        <bad>fix: resolve crash on startup</bad>
+        <scenario>Multiline commit</scenario>
+        <good>feat: add login flow
+
+- add UI
+- connect API
+الحمد لله</good>
+        <bad>feat: add login flow
+
+- add UI
+- connect API</bad>
+      </example>
+    </principle>
+  </general_principles>
+  <code_conventions>
+    <convention category="message_format">
+      <rule>Use imperative mood and concise language in commit messages. Always end with "الحمد لله".</rule>
+      <examples>
+        <good>fix: resolve crash on startup الحمد لله</good>
+        <bad>fixed startup crash</bad>
+      </examples>
+    </convention>
+  </code_conventions>
+  <common_pitfalls>
+    <pitfall>
+      <description>Committing build artifacts or secrets</description>
+      <why_problematic>Pollutes history and may expose sensitive data.</why_problematic>
+      <correct_approach>Review staged files before committing.</correct_approach>
+    </pitfall>
+    <pitfall>
+      <description>Omitting the gratitude suffix</description>
+      <why_problematic>Misses the required standard for all commit messages.</why_problematic>
+      <correct_approach>Always append "الحمد لله" at the end of the commit message.</correct_approach>
+    </pitfall>
+  </common_pitfalls>
+  <quality_checklist>
+    <category name="before_commit">
+      <item>Review staged changes with git diff</item>
+      <item>Check commit message for clarity, standards, and gratitude suffix</item>
+      <item>Ensure no secrets or large files are staged</item>
+    </category>
+    <category name="after_commit">
+      <item>Verify commit with git log</item>
+      <item>Push or sync as needed</item>
+    </category>
+  </quality_checklist>
+</best_practices>

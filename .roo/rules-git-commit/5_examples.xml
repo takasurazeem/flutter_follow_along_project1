@@ -1,0 +1,32 @@
+<examples>
+  <example name="feature_commit">
+    <description>Committing a new feature with proper workflow</description>
+    <context>When adding a new login feature</context>
+    <code language="shell">
+      git status
+      git add lib/login.dart
+      git diff --cached
+      # Review changes
+      git commit -m "feat(login): add user login flow"
+      git log -1
+    </code>
+    <explanation>
+      Stages only the intended file, reviews the diff, uses a conventional commit message, and verifies the commit.
+    </explanation>
+  </example>
+  <example name="fix_commit">
+    <description>Committing a bugfix with validation</description>
+    <context>When fixing a crash on startup</context>
+    <code language="shell">
+      git status
+      git add lib/main.dart
+      git diff --cached
+      # Review changes
+      git commit -m "fix: resolve crash on startup"
+      git log -1
+    </code>
+    <explanation>
+      Follows the same workflow for a bugfix, ensuring clarity and standards.
+    </explanation>
+  </example>
+</examples>
