@@ -86,24 +86,29 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Container(
-          margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
-          padding: EdgeInsets.all(16),
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.deepPurple.shade100,
-            borderRadius: BorderRadius.all(Radius.circular(16)),
-          ),
-          child: Text(
-            'Hello, Flutter!',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w400,
-              color: Colors.deepPurpleAccent.shade700,
+      body: Container(
+        color: Colors.white70,
+        child: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Center(
+            child: Container(
+              margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
+              padding: EdgeInsets.all(16),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.deepPurple.shade100,
+                borderRadius: BorderRadius.all(Radius.circular(16)),
+              ),
+              child: Text(
+                'Hello, Flutter!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.deepPurpleAccent.shade700,
+                ),
+              ),
             ),
           ),
         ),
