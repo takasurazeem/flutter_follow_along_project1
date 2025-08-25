@@ -40,13 +40,23 @@
 - connect API</bad>
       </example>
     </principle>
+    <principle priority="high">
+      <name>Descriptive Commit Messages</name>
+      <description>Summarize the actual code changes in the commit message. Always run <code>git diff</code> before committing and describe the main changes in detail.</description>
+      <rationale>Improves traceability and understanding of the codebase.</rationale>
+      <example>
+        <scenario>UI refactor</scenario>
+        <good>refactor: replace custom container with network image in MyHomePage الحمد لله</good>
+        <bad>update UI الحمد لله</bad>
+      </example>
+    </principle>
   </general_principles>
   <code_conventions>
     <convention category="message_format">
-      <rule>Use imperative mood and concise language in commit messages. Always end with "الحمد لله".</rule>
+      <rule>Use imperative mood and concise language in commit messages. Always end with "الحمد لله". Summarize the main code changes based on git diff output.</rule>
       <examples>
-        <good>fix: resolve crash on startup الحمد لله</good>
-        <bad>fixed startup crash</bad>
+        <good>refactor: replace custom container with network image in MyHomePage الحمد لله</good>
+        <bad>fixed UI الحمد لله</bad>
       </examples>
     </convention>
   </code_conventions>
@@ -61,11 +71,16 @@
       <why_problematic>Misses the required standard for all commit messages.</why_problematic>
       <correct_approach>Always append "الحمد لله" at the end of the commit message.</correct_approach>
     </pitfall>
+    <pitfall>
+      <description>Vague commit messages</description>
+      <why_problematic>Makes it hard to understand what was changed and why.</why_problematic>
+      <correct_approach>Summarize the main code changes in the commit message using git diff.</correct_approach>
+    </pitfall>
   </common_pitfalls>
   <quality_checklist>
     <category name="before_commit">
       <item>Review staged changes with git diff</item>
-      <item>Check commit message for clarity, standards, and gratitude suffix</item>
+      <item>Check commit message for clarity, standards, gratitude suffix, and descriptive summary</item>
       <item>Ensure no secrets or large files are staged</item>
     </category>
     <category name="after_commit">

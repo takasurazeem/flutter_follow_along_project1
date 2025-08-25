@@ -29,10 +29,17 @@
         <step>Confirm staged changes with git status</step>
       </steps>
     </phase>
+    <phase name="review_changes">
+      <description>Review staged changes before committing</description>
+      <steps>
+        <step>Run <code>git diff</code> to see the exact code changes</step>
+        <step>Summarize the main changes for the commit message</step>
+      </steps>
+    </phase>
     <phase name="commit_message">
       <description>Write and validate the commit message</description>
       <steps>
-        <step>Draft a clear, standards-compliant commit message</step>
+        <step>Draft a clear, standards-compliant commit message summarizing the code changes from git diff</step>
         <step>Validate message against commit standards</step>
         <step>Revise message if needed</step>
       </steps>
@@ -54,7 +61,7 @@
   </main_workflow>
   <completion_criteria>
     <criterion>All intended files are staged and committed</criterion>
-    <criterion>Commit message meets standards</criterion>
+    <criterion>Commit message meets standards and summarizes git diff</criterion>
     <criterion>No errors or warnings remain</criterion>
     <criterion>User is informed of next steps</criterion>
   </completion_criteria>
