@@ -86,8 +86,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Image.network(
-        'https://fastly.picsum.photos/id/25/5000/3333.jpg?hmac=yCz9LeSs-i72Ru0YvvpsoECnCTxZjzGde805gWrAHkM',
+      body: Image.asset(
+        'assets/images/bg.jpg',
+        height: double.infinity,
+        fit: BoxFit.cover,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
