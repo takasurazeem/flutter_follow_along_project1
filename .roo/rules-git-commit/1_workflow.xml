@@ -47,7 +47,9 @@
     <phase name="commit_execution">
       <description>Run the git commit command</description>
       <steps>
-        <step>Execute git commit with the validated message</step>
+        <step>Write the commit message in <code>commit-message.txt</code> using the required format (bullets, gratitude suffix).</step>
+        <step>Add <code>commit-message.txt</code> to <code>.gitignore</code> if not already ignored.</step>
+        <step>Execute <code>git commit -F commit-message.txt</code> (or <code>git commit --amend -F commit-message.txt</code> for amending).</step>
         <step>Handle any pre-commit hooks or errors</step>
       </steps>
     </phase>
